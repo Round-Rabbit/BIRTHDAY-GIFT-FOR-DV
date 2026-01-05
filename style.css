@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffcad4;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+.container { position: relative; }
+
+/* Gaya Amplop */
+.envelope-wrapper {
+    background: #f15bb5;
+    width: 250px;
+    height: 180px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.envelope-wrapper:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    border-top: 100px solid #fee440;
+    border-right: 125px solid transparent;
+    border-left: 125px solid transparent;
+}
+
+.letter {
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    left: 5%;
+    height: 90%;
+    background: white;
+    text-align: center;
+    padding-top: 20px;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+/* Sembunyikan pesan awal */
+.hidden { display: none; text-align: center; animation: fadeIn 2s ease-in; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid white;
+    object-fit: cover;
+    margin: 20px 0;
+}
+
+.title { font-family: 'Dancing Script', cursive; font-size: 3rem; color: #d00000; }
+.message { font-style: italic; max-width: 400px; margin: auto; }
+.btn-play {
+    margin-top: 20px; padding: 10px 20px;
+    border-radius: 20px; border: none; background: #9b5de5; color: white; cursor: pointer;
+}
