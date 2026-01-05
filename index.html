@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Gift For You</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="envelope-wrapper" id="envelope" onclick="openGift()">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>Klik untuk Buka! 💌</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div>
+
+        <div id="content" class="hidden">
+            <h1 class="title">Happy Birthday! 🎂</h1>
+            <div class="image-container">
+                <img src="foto.jpg" alt="Birthday Person" class="profile-img">
+            </div>
+            <p class="message">"Selamat ulang tahun! Semoga harimu luar biasa dan semua mimpimu jadi nyata. Terima kasih sudah menjadi teman yang hebat! ✨"</p>
+            <p class="signature">- Dari Temanmu -</p>
+            
+            <button class="btn-play" onclick="playMusic()">🎵 Putar Lagu</button>
+            <audio id="birthdaySong" src="musik.mp3"></audio>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
