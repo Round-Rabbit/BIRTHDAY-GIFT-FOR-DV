@@ -1,40 +1,44 @@
+let rainInterval = null;
+
 function nextLayer(layerNum) {
+    // Pindah Layer
     document.querySelectorAll('.layer').forEach(layer => {
         layer.classList.remove('active');
     });
-
     document.getElementById('layer' + layerNum).classList.add('active');
 
-    const video = document.getElementById('ultahVideo');
-    if (layerNum !== 3) { video.pause(); }
-
+    // Confetti di Layer 2
     if (layerNum === 2) {
-        confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+        confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
     }
 
+    // Efek Hujan di Layer 4
     if (layerNum === 4) {
         startFalling();
+    } else {
+        stopFalling();
     }
 }
 
 function startFalling() {
+    if (rainInterval) return;
     const container = document.getElementById('fallingNailoongs');
     
-    // Fungsi ini membuat gambar jatuh setiap 300ms
-    setInterval(() => {
+    rainInterval = setInterval(() => {
         const nailoong = document.createElement('div');
         nailoong.classList.add('falling-object');
-        
-        // Gunakan path relatif yang jelas
+        // Pastikan file nailoong-mini.png ada di GitHub
         nailoong.style.backgroundImage = "url('./nailoong-mini.png')";
-        
         nailoong.style.left = Math.random() * 100 + "vw";
-        // Durasi jatuh acak antara 2 sampai 4 detik
         nailoong.style.animationDuration = (Math.random() * 2 + 2) + "s";
         
         container.appendChild(nailoong);
-
-        // Hapus elemen setelah jatuh agar tidak memberatkan HP
-        setTimeout(() => { nailoong.remove(); }, 4500);
+        setTimeout(() => { nailoong.remove(); }, 4000);
     }, 300);
+}
+
+function stopFalling() {
+    clearInterval(rainInterval);
+    rainInterval = null;
+    document.querySelectorAll('.falling-object').forEach(el => el.remove());
 }
