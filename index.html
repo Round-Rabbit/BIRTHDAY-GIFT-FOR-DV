@@ -3,36 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Special Gift For You</title>
+    <title>Birthday Gift for Devii 🐉</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Zilla+Slab:wght@700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 
-    <div class="container">
-        <div class="envelope-wrapper" id="envelope" onclick="openGift()">
-            <div class="envelope">
-                <div class="letter">
-                    <div class="text">
-                        <strong>Klik untuk Buka! 💌</strong>
-                    </div>
-                </div>
+    <audio id="bgMusic" src="nailoong-song.mp3" loop></audio>
+
+    <div class="card-container">
+        
+        <div id="layer1" class="layer active">
+            <img src="nailoong-hello.png" alt="Nailoong Hello" class="nailoong-img">
+            <h2>Halo Devii! ✨</h2>
+            <p>Ini aku Al. Ada sedikit hadiah kecil yang aku siapkan untukmu nih hehehe. Oiya jangan lupa klik musiknya ya biar makin seru!</p>
+            <div class="btn-group">
+                <button class="btn-music" onclick="toggleMusic()">🎵 Putar Musik</button>
+                <button class="btn-next" onclick="nextLayer(2)">Lanjut ➔</button>
             </div>
-            <div class="heart"></div>
         </div>
 
-        <div id="content" class="hidden">
-            <h1 class="title">Happy Birthday! 🎂</h1>
-            <div class="image-container">
-                <img src="foto.jpg" alt="Birthday Person" class="profile-img">
+        <div id="layer2" class="layer">
+            <img src="nailoong-cake.png" alt="Nailoong Cake" class="nailoong-img">
+            <h1 class="birthday-text">Happy Birthday ke-22! 🎂</h1>
+            <p>Selamat bertambah usia, Devii! Semoga tahun ini menjadi tahun yang paling luar biasa buat kamu.</p>
+            <div class="btn-group">
+                <button class="btn-next" onclick="nextLayer(3)">Buka Harapan ➔</button>
             </div>
-            <p class="message">"Selamat ulang tahun! Semoga harimu luar biasa dan semua mimpimu jadi nyata. Terima kasih sudah menjadi teman yang hebat! ✨"</p>
-            <p class="signature">- Dari Temanmu -</p>
-            
-            <button class="btn-play" onclick="playMusic()">🎵 Putar Lagu</button>
-            <audio id="birthdaySong" src="musik.mp3"></audio>
         </div>
+
+        <div id="layer3" class="layer">
+            <img src="nailoong-love.png" alt="Nailoong Love" class="nailoong-img">
+            <h2>Harapan & Doa 🤲</h2>
+            <p>Semoga sehat selalu, dilancarkan segala urusannya, dan tetap jadi pribadi yang ceria seperti Nailoong! Bahagia terus ya, Dev!</p>
+            <div class="btn-group">
+                <button class="btn-next" onclick="location.reload()">Mulai Lagi ↺</button>
+            </div>
+        </div>
+
     </div>
 
     <script src="script.js"></script>
