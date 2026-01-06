@@ -86,3 +86,20 @@ button:hover {
     transform: scale(1.05);
     filter: brightness(1.1);
 }
+/* Gaya untuk Efek Hujan Nailoong */
+.falling-object {
+    position: fixed;
+    top: -50px; /* Mulai dari atas layar */
+    width: 40px; /* Ukuran gambar Nailoong saat jatuh */
+    height: 40px;
+    background-size: cover;
+    pointer-events: none; /* Agar tidak mengganggu klik */
+    opacity: 0;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0) rotateZ(0deg); opacity: 0; }
+    10% { opacity: 1; } /* Muncul penuh setelah sedikit bergerak */
+    100% { transform: translateY(100vh) rotateZ(720deg); opacity: 0; }
+}
