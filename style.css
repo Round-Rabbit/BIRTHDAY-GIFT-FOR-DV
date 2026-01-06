@@ -1,0 +1,84 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0; padding: 0;
+    background-color: #FFD700;
+    display: flex; justify-content: center; align-items: center;
+    min-height: 100vh; font-family: 'Poppins', sans-serif;
+    overflow-x: hidden; /* Hanya sembunyikan horizontal */
+}
+
+.card-container {
+    background: white; 
+    width: 90%; 
+    max-width: 380px;
+    padding: 20px; 
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    text-align: center; 
+    border: 4px solid #FF4500;
+    position: relative; 
+    z-index: 10;
+    /* Perbaikan: Biarkan kartu memanjang mengikuti video */
+    height: auto;
+    margin: 20px auto;
+}
+
+.layer { display: none; animation: fadeIn 0.5s ease; }
+.layer.active { display: block; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.nailoong-img { width: 120px; margin-bottom: 10px; }
+
+/* Wrapper Video Potret YouTube (Rasio Shorts 9:16) */
+.video-wrapper-potrait {
+    position: relative;
+    width: 100%;
+    max-width: 250px; /* Lebar video agar pas di HP */
+    margin: 15px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    
+    /* Gunakan padding-top untuk mengunci rasio potret */
+    padding-top: 177.77%; 
+}
+
+.video-wrapper-potrait iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Tombol-tombol */
+button, .btn-wa {
+    display: block; width: 100%; padding: 12px;
+    margin-top: 10px; border-radius: 50px;
+    border: none; font-weight: bold; cursor: pointer;
+    text-decoration: none; font-size: 0.85rem; text-align: center;
+}
+
+.btn-next { background: #FF4500; color: white; }
+.btn-wa { background: #25D366; color: white; line-height: 1.2; }
+.btn-reset { background: #eee; color: #333; }
+
+/* Efek Hujan */
+.falling-object {
+    position: fixed; top: -10vh;
+    width: 45px; height: 45px;
+    background-size: contain; background-repeat: no-repeat;
+    z-index: 9999; pointer-events: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to { transform: translateY(110vh) rotate(360deg); opacity: 0.5; }
+}
