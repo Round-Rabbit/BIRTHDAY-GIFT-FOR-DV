@@ -2,17 +2,17 @@
 
 body {
     margin: 0; padding: 0;
-    background-color: #FFD700;
+    background-color: #FFD700; /* Kuning Naga */
     display: flex; justify-content: center; align-items: center;
     min-height: 100vh; font-family: 'Poppins', sans-serif;
-    overflow: hidden;
+    overflow: hidden; /* Mencegah scroll yang tidak perlu */
 }
 
 .card-container {
     background: white; width: 90%; max-width: 400px;
     padding: 25px; border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    text-align: center; border: 4px solid #FF4500;
+    text-align: center; border: 4px solid #FF4500; /* Merah Naga */
     position: relative; z-index: 10;
 }
 
@@ -26,34 +26,43 @@ body {
 
 .nailoong-img { width: 130px; margin-bottom: 10px; }
 
-.video-wrapper {
-    width: 100%; border-radius: 10px;
-    overflow: hidden; margin: 15px 0; background: #000;
+h1, h2 { color: #FF4500; margin: 10px 0; }
+.birthday-text { font-size: 1.8rem; }
+p { color: #444; font-size: 0.95rem; line-height: 1.5; }
+
+/* Wrapper untuk video potret */
+.video-wrapper-potrait {
+    width: 100%; /* Lebar penuh card */
+    max-width: 250px; /* Maksimal lebar video agar tidak terlalu besar */
+    margin: 15px auto; /* Tengah di card */
+    border-radius: 10px; overflow: hidden;
+    background: #000;
 }
-video { width: 100%; display: block; }
+video { width: 100%; height: auto; display: block; }
+
 
 button, .btn-wa {
     display: block; width: 100%; padding: 12px;
     margin-top: 10px; border-radius: 50px;
     border: none; font-weight: bold; cursor: pointer;
-    text-decoration: none; font-size: 0.9rem; transition: 0.3s;
+    text-decoration: none; font-size: 0.9rem; text-align: center;
+    transition: 0.3s;
 }
 
 .btn-next { background: #FF4500; color: white; }
-.btn-wa { background: #25D366; color: white; }
+.btn-wa { background: #25D366; color: white; } /* Hijau WhatsApp */
 .btn-reset { background: #eee; color: #333; }
 
-/* CSS Hujan Nailoong */
+/* Gaya untuk Hujan Nailoong */
 .falling-object {
-    position: fixed; top: -10vh;
-    width: 50px; height: 50px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: 9999; /* Sangat penting agar terlihat */
-    pointer-events: none;
+    position: fixed; top: -10vh; /* Mulai dari atas layar */
+    width: 50px; height: 50px; /* Ukuran gambar Nailoong */
+    background-size: contain; background-repeat: no-repeat;
+    z-index: 9999; /* Pastikan di atas semua elemen */
+    pointer-events: none; /* Agar tidak mengganggu klik */
     animation: fall linear forwards;
 }
 
 @keyframes fall {
-    to { transform: translateY(110vh) rotate(360deg); }
+    to { transform: translateY(110vh) rotate(360deg); opacity: 0; } /* Jatuh dan menghilang */
 }
