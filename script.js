@@ -1,27 +1,32 @@
-function openGift() {
-    // 1. Jalankan efek Confetti
-    confetti({
-        particleCount: 150,
-        spread: 70,
-        origin: { y: 0.6 }
+function nextLayer(layerNum) {
+    // Sembunyikan semua layer
+    document.querySelectorAll('.layer').forEach(layer => {
+        layer.classList.remove('active');
     });
 
-    // 2. Sembunyikan amplop
-    document.getElementById('envelope').style.display = 'none';
+    // Tampilkan layer yang dipilih
+    document.getElementById('layer' + layerNum).classList.add('active');
 
-    // 3. Tampilkan konten utama
-    const content = document.getElementById('content');
-    content.classList.remove('hidden');
-    
-    // 4. Ubah warna background agar lebih ceria
-    document.body.style.backgroundColor = "#fff0f3";
+    // Jika masuk ke layer 2 (Ultah), tembakkan confetti!
+    if (layerNum === 2) {
+        confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ['#FFD700', '#FF4500', '#FFFFFF']
+        });
+    }
 }
 
-function playMusic() {
-    var audio = document.getElementById("birthdaySong");
-    if (audio.paused) {
-        audio.play();
+function toggleMusic() {
+    const music = document.getElementById('bgMusic');
+    const btn = document.querySelector('.btn-music');
+    
+    if (music.paused) {
+        music.play();
+        btn.innerText = "⏸ Matikan Musik";
     } else {
-        audio.pause();
+        music.pause();
+        btn.innerText = "🎵 Putar Musik";
     }
 }
