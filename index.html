@@ -3,36 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Birthday Gift for Devii 🐉</title>
+    <title>Birthday Gift for Devii</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Zilla+Slab:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 
     <div class="card-container">
-        
         <div id="layer1" class="layer active">
             <img src="Nailoong 4.jpg" alt="Nailoong 4" class="nailoong-img">
             <h2>Halo Devii! ✨</h2>
-            <p>Ini aku Al. Ada sedikit hadiah kecil yang aku siapkan untukmu nihh. Semoga Kamu Suka Yaa~.</p>
+            <p>Ini aku Al. Ada sedikit hadiah kecil yang sudah aku siapkan untukmu nih. Semoga kamu suka yaaa~.</p>
             <button class="btn-next" onclick="nextLayer(2)">Buka Kado ➔</button>
         </div>
 
         <div id="layer2" class="layer">
             <img src="Nailoong 1.jpg" alt="Nailoong 1" class="nailoong-img">
             <h1 class="birthday-text">Happy Birthday ke-22! 🎂</h1>
-            <p>Selamat bertambah usia, Devii! Semoga tahun ini menjadi tahun yang paling luar biasa buat kamu!.</p>
+            <p>Selamat bertambah usia, Sri Devi Mulyanii! Semoga tahun ini menjadi tahun yang paling luar biasa buat kamu yaa.</p>
             <button class="btn-next" onclick="nextLayer(3)">Lihat Video ➔</button>
         </div>
 
         <div id="layer3" class="layer">
             <h2>Spesial Untukmu 🎬</h2>
             <div class="video-wrapper-potrait">
-                <video id="ultahVideo" controls playsinline webkit-playsinline preload="auto">
-                    <source src="video ultah dv.mp4" type="video/mp4">
-                    Browser kamu tidak mendukung pemutaran video ini.
-                </video>
+                <iframe 
+                    src="https://www.youtube.com/embed/Jsxna0I91_0?si=DUc5a5DI0SQ5-ARq?rel=0&modestbranding=1&playsinline=1" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
             </div>
             <button class="btn-next" onclick="nextLayer(4)">Terakhir ➔</button>
         </div>
@@ -40,16 +41,13 @@
         <div id="layer4" class="layer">
             <img src="Nailoong 3.jpg" alt="Nailoong 3" class="nailoong-img">
             <h2>Harapan & Doa 🤲</h2>
-            <p>Semoga sehat selalu, dilancarkan segala urusannya termasuk kuliah dan skripsinyaa, semakin banyak hal baik yang datang dan tetap jadi pribadi yang ceria seperti Nailoong! Bahagia terus ya, Dev!</p>
+            <p>Semoga sehat selalu, dilancarkan segala urusannya termasuk kuliah dan skripsinyaa, semakin banyak hal baik yang datangg dan tetap jadi pribadi yang ceria seperti Nailoong! Bahagia terus ya, Dev!</p>
             
-            <div class="btn-group">
-                <a href="https://wa.me/6285787914446?text=Hai%20Al!%20Makasih%20ya%20buat%20webnya,%20kesan%20aku..." target="_blank" class="btn-wa">
-                    Jika sudah selesai sampaikan kesannya dengan klik ini ya hehehe
-                </a>
-                <button class="btn-reset" onclick="location.reload()">Mulai Lagi ↺</button>
-            </div>
+            <a href="https://wa.me/6285787914446?text=Hai%20Al!%20Makasih%20ya%20buat%20webnya,%20kesan%20aku..." target="_blank" class="btn-wa">
+                Jika sudah selesai sampaikan kesannya dengan klik ini ya hehehe
+            </a>
+            <button class="btn-reset" onclick="location.reload()">Mulai Lagi ↺</button>
         </div>
-
     </div>
 
     <div id="fallingNailoongs"></div>
